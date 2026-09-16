@@ -61,6 +61,7 @@ input[type="checkbox"] {
 
 #result-table {
     table-layout: fixed;
+    word-break: break-all;
 }
 
 .left-table {
@@ -70,4 +71,8 @@ input[type="checkbox"] {
 .option-label::after {
     content:"*";
     color:red;
+}
+
+.wide-col {
+    width: 84px;
 }

@@ -1,6 +1,7 @@
 import {addButton, getCheckbox, getText} from './inputs.js';
 import {put, get, getLastId} from './storage.js';
 import submittion from './submittion.js';
+import {drawPoint, clear, draw} from './canvas.js';
 const form = document.getElementById('form')
 const table = document.getElementById('result-table');
 const tbody = document.getElementById('result-table-body');
@@ -56,6 +57,9 @@ export function handleTable(){
         } else if (r == null){
             error.innerText = 'wrong r value';
         } else {
+            clear();
+            draw();
+            drawPoint(x,y,r);
             addNewLine(x,y,r);
             error.innerText = '';
         }

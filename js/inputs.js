@@ -1,8 +1,11 @@
 export function addButton(varName, callback){
     const inputs = document.querySelectorAll(varName);
     inputs.forEach((input) => {
-        input.addEventListener('click', (event) =>
-        callback(event.target.value))
+        input.addEventListener('click', (event) =>{
+            inputs.forEach((input) => input.style.backgroundColor = '');
+            input.style.backgroundColor = '#82aef5';
+            callback(event.target.value)
+    })
     })
 }
 

@@ -45,9 +45,6 @@ input[type="checkbox"] {
     width: 40px;
 }
 
-button:hover {
-    background-color:#0033a3;
-}
 
 .text-input {
     padding: 1% 0;
@@ -56,6 +53,10 @@ button:hover {
 
 .submit-button {
     width: 60px;
+}
+
+.submit-button:hover {
+    background-color: rgb(125, 238, 125);
 }
 
 #result-table {

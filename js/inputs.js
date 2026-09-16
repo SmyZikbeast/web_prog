@@ -25,7 +25,7 @@ export function getCheckbox(varName, callback){
 export function getText(varName, callback, min, max){
     const input = document.getElementById(varName);
     let val = +input.value.replace(',', '.');
-    if (input.value.length == 0){
+    if (input.value.length == 0 || input.value.length > 10){
         callback(null);
     } else if (!isNaN(val) && val >= min && val <=max){
         callback(val);

@@ -19,3 +19,7 @@ export function getLastId(){
     }
     return Math.max(...get().map(item => item.id));
 }
+
+export function getLast(){
+    return get().at(-1);
+}

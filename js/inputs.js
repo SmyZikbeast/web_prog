@@ -26,10 +26,21 @@ export function getText(varName, callback, min, max){
     const input = document.getElementById(varName);
     let val = +input.value.replace(',', '.');
     if (input.value.length == 0 || input.value.length > 10){
-        callback(null);
+        callback('wrong length');
     } else if (!isNaN(val) && val >= min && val <=max){
         callback(val);
     } else {
         callback(null);
     }
+}
+
+export function addText(varName){
+    const input = document.getElementById(varName);
+    input.addEventListener('input', (event) => {
+        if (input.value.length > 10){
+            input.style.color = 'red';
+        } else {
+            input.style.color = 'black';
+        }
+    })
 }

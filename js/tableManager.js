@@ -1,5 +1,5 @@
-import {addButton, getCheckbox, getText} from './inputs.js';
-import {put, get, getLastId} from './storage.js';
+import {addButton, getCheckbox, getText, addText} from './inputs.js';
+import {put, get, getLastId, getLast} from './storage.js';
 import submittion from './submittion.js';
 import {drawPoint, clear, draw} from './canvas.js';
 const form = document.getElementById('form')
@@ -54,13 +54,14 @@ export function handleTable(){
             error.innerText = 'wrong x value';
         } else if (y == null){
             error.innerText = 'wrong y value';
+        } else if (y == 'wrong length'){
+            error.innerText = 'wrong y length';
         } else if (r == null){
             error.innerText = 'wrong r value';
         } else {
-            clear();
-            draw();
-            drawPoint(x,y,r);
+            
             addNewLine(x,y,r);
+            drawNewPoint();
             error.innerText = '';
         }
     }
@@ -83,6 +84,13 @@ function checkTimezone(){
         timezone = newTimezone;
         updateTable();
     }
+    drawNewPoint();
+}
+
+function drawNewPoint(){
+    clear();
+    draw();
+    drawPoint(getLast().x, getLast().y, getLast().r);
 }
 
 function updateX(value){
@@ -98,4 +106,5 @@ function updateR(value){
 }
 
 addButton('.x-button', updateX);
+addText('y-text');
 setInterval(checkTimezone, 500);

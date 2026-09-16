@@ -66,3 +66,8 @@ input[type="checkbox"] {
 .left-table {
     vertical-align: top;
 }
+
+.option-label::after {
+    content:"*";
+    color:red;
+}

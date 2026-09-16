@@ -51,11 +51,11 @@ input[type="checkbox"] {
     margin-left: 3%;
 }
 
-.submit-button {
+#submit-button {
     width: 60px;
 }
 
-.submit-button:hover {
+#submit-button:hover {
     background-color: rgb(125, 238, 125);
 }
 

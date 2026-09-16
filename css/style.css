@@ -45,7 +45,7 @@ input[type="checkbox"] {
     width: 40px;
 }
 
-.x-button:hover {
+button:hover {
     background-color:#0033a3;
 }
 
